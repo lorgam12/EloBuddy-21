@@ -8,6 +8,10 @@ namespace pEzreal.Extensions
 {
     internal class Spells
     {
+        public static readonly Item Youmuu = new Item(ItemId.Youmuus_Ghostblade, Config.MyHero.GetAutoAttackRange());
+        public static readonly Item Botrk = new Item(ItemId.Blade_of_the_Ruined_King, 550);
+        public static readonly Item Cutlass = new Item(ItemId.Bilgewater_Cutlass, 550);
+
         public static void Initialize()
         {
             Q = new Spell.Skillshot(SpellSlot.Q, 1050, SkillShotType.Linear, 250, 2000, 60)

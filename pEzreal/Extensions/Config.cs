@@ -1,4 +1,5 @@
 ﻿using EloBuddy;
+using EloBuddy.SDK;
 using EloBuddy.SDK.Menu;
 using EloBuddy.SDK.Menu.Values;
 
@@ -33,6 +34,13 @@ namespace pEzreal.Extensions
             Combo.AddGroupLabel("Trueshot Barrage");
             Combo.Add("R", new CheckBox("Use"));
             Combo.Add("REnemies", new Slider("Minimum enemies", 3, 0, 5));
+
+            Combo.AddSeparator();
+
+            Combo.AddGroupLabel("Items");
+            Combo.Add("botrk", new CheckBox("Use Blade of the Ruined King"));
+            Combo.Add("botrkHealth", new Slider("Minimum health", 65));
+            Combo.Add("youmuu", new CheckBox("Use Youmuu's Ghostblade"));
 
             //Harass Menu
             Harass = Settings.AddSubMenu("Harass", "HarassMenu");
@@ -124,6 +132,9 @@ namespace pEzreal.Extensions
         public static int ComboEMode => Combo["E_mode"].Cast<ComboBox>().CurrentValue;
         public static bool ComboR => Combo["R"].Cast<CheckBox>().CurrentValue;
         public static int ComboREnemies => Combo["REnemies"].Cast<Slider>().CurrentValue;
+        public static bool ComboBotrk => Combo["botrk"].Cast<CheckBox>().CurrentValue;
+        public static int ComboBotrkHealth => Combo["botrkHealth"].Cast<Slider>().CurrentValue;
+        public static bool ComboYoumuu => Combo["youmuu"].Cast<CheckBox>().CurrentValue;
 
         //Harass values
         public static bool HarassQ => Harass["Q"].Cast<CheckBox>().CurrentValue;
