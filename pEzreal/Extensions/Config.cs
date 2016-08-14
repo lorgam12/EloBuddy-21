@@ -38,7 +38,7 @@ namespace pEzreal.Extensions
             Combo.AddSeparator();
 
             Combo.AddGroupLabel("Items");
-            Combo.Add("botrk", new CheckBox("Use Blade of the Ruined King"));
+            Combo.Add("botrk", new CheckBox("Use Blade of the Ruined King/Bilgewater Cutlass"));
             Combo.Add("botrkHealth", new Slider("Minimum health", 65));
             Combo.Add("youmuu", new CheckBox("Use Youmuu's Ghostblade"));
 
