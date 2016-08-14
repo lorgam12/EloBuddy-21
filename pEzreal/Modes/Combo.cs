@@ -11,7 +11,7 @@ namespace pEzreal.Modes
             if (Config.ComboE)
             {
                 var target = TargetSelector.GetTarget(Spells.Q.Range + Spells.E.Range, DamageType.Magical);
-                if (target.IsInvulnerable || !target.IsValidTarget() || target.IsDead || target == null) return;
+                if (target == null || target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;
 
                 switch (Config.ComboEMode)
                 {

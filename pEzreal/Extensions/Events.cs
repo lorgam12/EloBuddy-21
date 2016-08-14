@@ -16,7 +16,8 @@ namespace pEzreal.Extensions
 
         private static void OnUpdate(EventArgs args)
         {
-            if (Config.SkinChanger) Config.MyHero.SetSkinId(Config.SkinId);
+            if (Config.SkinChanger && Config.MyHero.SkinId != Config.SkinId)
+                Config.MyHero.SetSkinId(Config.SkinId);
 
             var currentModes = Orbwalker.ActiveModesFlags.ToString();
 
