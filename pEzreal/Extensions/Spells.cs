@@ -15,6 +15,9 @@ namespace pEzreal.Extensions
         public static readonly Item QSS = new Item(ItemId.Quicksilver_Sash);
         public static readonly Item Mercurial = new Item(ItemId.Mercurial_Scimitar);
 
+        public static readonly Item TearOfTheGoddess = new Item(ItemId.Tear_of_the_Goddess);
+        public static readonly Item Manamune = new Item(ItemId.Manamune);
+
         public static void Initialize()
         {
             Q = new Spell.Skillshot(SpellSlot.Q, 1050, SkillShotType.Linear, 250, 2000, 60)

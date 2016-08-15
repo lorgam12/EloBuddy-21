@@ -127,6 +127,9 @@ namespace pEzreal.Extensions
 
             Misc.AddGroupLabel("Hitchance");
             Misc.Add("_hitchance", new ComboBox("Choose your hitchance", 2, "Low", "Medium", "High"));
+
+            Misc.AddGroupLabel("Tear stacking");
+            Misc.Add("tearStacking", new KeyBind("Enabled", true, KeyBind.BindTypes.PressToggle, 'K'));
         }
 
         //Combo values
@@ -176,5 +179,6 @@ namespace pEzreal.Extensions
         public static bool SkinChanger => Misc["skinChanger"].Cast<CheckBox>().CurrentValue;
         public static int SkinId => Misc["skinID"].Cast<ComboBox>().CurrentValue;
         public static int HitchanceChosen => Misc["_hitchance"].Cast<ComboBox>().CurrentValue;
+        public static bool TearStacking => Misc["tearStacking"].Cast<KeyBind>().CurrentValue;
     }
 }

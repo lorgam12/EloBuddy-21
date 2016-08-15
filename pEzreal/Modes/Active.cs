@@ -1,4 +1,5 @@
 ﻿using EloBuddy;
+using EloBuddy.SDK;
 using pEzreal.Extensions;
 
 namespace pEzreal.Modes
@@ -7,8 +8,11 @@ namespace pEzreal.Modes
     {
         public static void Initialize()
         {
+            if (Config.MyHero.IsRecalling() || Config.MyHero.IsDead) return;
+
             Killsteal.Execute();
             if (Config.UseQSS) Cleanse();
+            if (Config.TearStacking && Config.MyHero.IsInShopRange()) TearStacking();
         }
 
         private static void Cleanse()
@@ -22,6 +26,15 @@ namespace pEzreal.Modes
             else if (Spells.Mercurial.IsOwned() && Spells.Mercurial.IsReady())
             {
                 Spells.Mercurial.Cast();
+            }
+        }
+
+        private static void TearStacking()
+        {
+            if (Spells.Manamune.IsOwned() || Spells.TearOfTheGoddess.IsOwned())
+            {
+                Spells.Q.Cast(Game.CursorPos);
+                Spells.W.Cast(Game.CursorPos);
             }
         }
 
