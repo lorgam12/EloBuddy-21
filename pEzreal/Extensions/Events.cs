@@ -36,7 +36,7 @@ namespace pEzreal.Extensions
             if (currentModes.Contains(Orbwalker.ActiveModes.JungleClear.ToString()))
                 Modes.JungleClear.Execute();
 
-            Modes.Killsteal.Execute();
+            Modes.Active.Initialize();
         }
 
         private static void OnDraw(EventArgs args)

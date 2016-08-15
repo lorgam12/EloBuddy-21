@@ -18,7 +18,7 @@ namespace pEzreal.Modes
 
                 if (minion == null || !minion.IsValidTarget(Spells.Q.Range)) return;
 
-                Spells.Q.CastMinimumHitchance(minion, Spells.HitChanceChooser());
+                Spells.Q.Cast(minion);
             }
         }
     }

@@ -12,6 +12,9 @@ namespace pEzreal.Extensions
         public static readonly Item Botrk = new Item(ItemId.Blade_of_the_Ruined_King, 550);
         public static readonly Item Cutlass = new Item(ItemId.Bilgewater_Cutlass, 550);
 
+        public static readonly Item QSS = new Item(ItemId.Quicksilver_Sash);
+        public static readonly Item Mercurial = new Item(ItemId.Mercurial_Scimitar);
+
         public static void Initialize()
         {
             Q = new Spell.Skillshot(SpellSlot.Q, 1050, SkillShotType.Linear, 250, 2000, 60)

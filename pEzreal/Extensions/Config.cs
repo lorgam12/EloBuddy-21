@@ -7,7 +7,7 @@ namespace pEzreal.Extensions
 {
     internal class Config
     {
-        public static Menu Settings, Combo, Harass, Lasthit, LaneClear, JungleClear, Killsteal, Misc, Drawing;
+        public static Menu Settings, Combo, Harass, Lasthit, LaneClear, JungleClear, Killsteal, Items, Misc, Drawing;
         public static AIHeroClient MyHero => Player.Instance;
 
         public static void Initialize()
@@ -29,18 +29,11 @@ namespace pEzreal.Extensions
 
             Combo.AddGroupLabel("Arcane Shift");
             Combo.Add("E", new CheckBox("Use"));
-            Combo.Add("E_mode",new ComboBox("Mode", 1, "To mouse", "Towards enemy", "Disabled"));
+            Combo.Add("E_mode",new ComboBox("Mode", 0, "To mouse", "Towards enemy", "Disabled"));
 
             Combo.AddGroupLabel("Trueshot Barrage");
             Combo.Add("R", new CheckBox("Use"));
             Combo.Add("REnemies", new Slider("Minimum enemies", 3, 0, 5));
-
-            Combo.AddSeparator();
-
-            Combo.AddGroupLabel("Items");
-            Combo.Add("botrk", new CheckBox("Use Blade of the Ruined King/Bilgewater Cutlass"));
-            Combo.Add("botrkHealth", new Slider("Minimum health", 65));
-            Combo.Add("youmuu", new CheckBox("Use Youmuu's Ghostblade"));
 
             //Harass Menu
             Harass = Settings.AddSubMenu("Harass", "HarassMenu");
@@ -112,6 +105,17 @@ namespace pEzreal.Extensions
             Drawing.AddGroupLabel("Options");
             Drawing.Add("ready", new CheckBox("Draw only if spell is ready?"));
 
+            //Items Menu
+            Items = Settings.AddSubMenu("Items", "ItemsMenu");
+
+            Items.AddGroupLabel("Offensive");
+            Items.Add("botrk", new CheckBox("Use Blade of the Ruined King/Bilgewater"));
+            Items.Add("botrkHealth", new Slider("Minimum health", 65));
+            Items.Add("youmuu", new CheckBox("Use Youmuu's Ghostblade"));
+
+            Items.AddGroupLabel("Defensive");
+            Items.Add("qss", new CheckBox("Use Quicksilver Sash/Mercurial Scimitar", false));
+
             //Misc Menu
             Misc = Settings.AddSubMenu("Miscellaneous", "MiscMenu");
 
@@ -132,9 +136,6 @@ namespace pEzreal.Extensions
         public static int ComboEMode => Combo["E_mode"].Cast<ComboBox>().CurrentValue;
         public static bool ComboR => Combo["R"].Cast<CheckBox>().CurrentValue;
         public static int ComboREnemies => Combo["REnemies"].Cast<Slider>().CurrentValue;
-        public static bool ComboBotrk => Combo["botrk"].Cast<CheckBox>().CurrentValue;
-        public static int ComboBotrkHealth => Combo["botrkHealth"].Cast<Slider>().CurrentValue;
-        public static bool ComboYoumuu => Combo["youmuu"].Cast<CheckBox>().CurrentValue;
 
         //Harass values
         public static bool HarassQ => Harass["Q"].Cast<CheckBox>().CurrentValue;
@@ -164,7 +165,13 @@ namespace pEzreal.Extensions
         public static bool DrawE => Drawing["E"].Cast<CheckBox>().CurrentValue;
         public static bool DrawR => Drawing["R"].Cast<CheckBox>().CurrentValue;
         public static bool Ready => Drawing["ready"].Cast<CheckBox>().CurrentValue;
-        
+
+        //Items values
+        public static bool UseQSS => Items["qss"].Cast<CheckBox>().CurrentValue;
+        public static bool ItemsBotrk => Items["botrk"].Cast<CheckBox>().CurrentValue;
+        public static int ItemsBotrkHealth => Items["botrkHealth"].Cast<Slider>().CurrentValue;
+        public static bool ItemsYoumuu => Items["youmuu"].Cast<CheckBox>().CurrentValue;
+
         //Misc values
         public static bool SkinChanger => Misc["skinChanger"].Cast<CheckBox>().CurrentValue;
         public static int SkinId => Misc["skinID"].Cast<ComboBox>().CurrentValue;

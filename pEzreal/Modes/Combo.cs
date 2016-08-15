@@ -45,18 +45,18 @@ namespace pEzreal.Modes
                 Spells.R_CastIfWillHit(Config.ComboREnemies);
             }
 
-            if (Config.ComboBotrk && (Spells.Botrk.IsOwned() && Spells.Botrk.IsReady())
+            if (Config.ItemsBotrk && (Spells.Botrk.IsOwned() && Spells.Botrk.IsReady())
                 || (Spells.Cutlass.IsOwned() && Spells.Cutlass.IsReady()))
             {
                 var target = TargetSelector.GetTarget(Spells.Botrk.Range, DamageType.Physical);
                 if (target == null || target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;
-                if (Config.ComboBotrkHealth >= Config.MyHero.HealthPercent) return;
+                if (Config.ItemsBotrkHealth >= Config.MyHero.HealthPercent) return;
 
                 if (Spells.Botrk.IsOwned() && Spells.Botrk.IsReady()) Spells.Botrk.Cast(target);
                 if (Spells.Cutlass.IsOwned() && Spells.Cutlass.IsReady()) Spells.Cutlass.Cast(target);
             }
 
-            if (Config.ComboYoumuu && Spells.Youmuu.IsOwned() && Spells.Youmuu.IsReady())
+            if (Config.ItemsYoumuu && Spells.Youmuu.IsOwned() && Spells.Youmuu.IsReady())
             {
                 var target = TargetSelector.GetTarget(Spells.Youmuu.Range, DamageType.Physical);
                 if (target == null || target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;

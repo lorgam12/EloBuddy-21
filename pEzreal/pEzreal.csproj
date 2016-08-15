@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="Extensions\Config.cs" />
     <Compile Include="Extensions\Events.cs" />
+    <Compile Include="Modes\Active.cs" />
     <Compile Include="Modes\Combo.cs" />
     <Compile Include="Modes\Harass.cs" />
     <Compile Include="Modes\JungleClear.cs" />

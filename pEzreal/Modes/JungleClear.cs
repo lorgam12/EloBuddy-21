@@ -18,7 +18,7 @@ namespace pEzreal.Modes
 
                 if (monster == null || !monster.IsValidTarget(Spells.Q.Range)) return;
 
-                Spells.Q.CastMinimumHitchance(monster, Spells.HitChanceChooser());
+                Spells.Q.Cast(monster);
             }
         }
     }
