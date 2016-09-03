@@ -31,14 +31,14 @@ namespace pEzreal.Extensions
 
         public static void CastQ(Obj_AI_Base target)
         {
-            if (target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;
+            if (target == null || target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;
 
             if (Q.IsReady()) Q.CastMinimumHitchance(target, HitChanceChooser());
         }
 
         public static void CastW(Obj_AI_Base target)
         {
-            if (target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;
+            if (target == null || target.IsInvulnerable || !target.IsValidTarget() || target.IsDead) return;
 
             if (W.IsReady()) W.CastMinimumHitchance(target, HitChanceChooser());
         }

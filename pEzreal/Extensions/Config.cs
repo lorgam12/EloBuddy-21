@@ -120,7 +120,7 @@ namespace pEzreal.Extensions
             Misc = Settings.AddSubMenu("Miscellaneous", "MiscMenu");
 
             Misc.AddGroupLabel("Skinchanger");
-            Misc.Add("skinChanger", new CheckBox("Enabled"));
+            Misc.Add("_skinChanger", new CheckBox("Enabled"));
             Misc.Add("skinID",
                 new ComboBox("Current skin", 0, "Default", "Nottingham", "Striker", "Frosted", "Explorer", "Pulsefire",
                     "TPA", "Debonair", "Ace of Spades"));
@@ -176,7 +176,7 @@ namespace pEzreal.Extensions
         public static bool ItemsYoumuu => Items["youmuu"].Cast<CheckBox>().CurrentValue;
 
         //Misc values
-        public static bool SkinChanger => Misc["skinChanger"].Cast<CheckBox>().CurrentValue;
+        public static bool SkinChanger => Misc["_skinChanger"].Cast<CheckBox>().CurrentValue;
         public static int SkinId => Misc["skinID"].Cast<ComboBox>().CurrentValue;
         public static int HitchanceChosen => Misc["_hitchance"].Cast<ComboBox>().CurrentValue;
         public static bool TearStacking => Misc["tearStacking"].Cast<KeyBind>().CurrentValue;
